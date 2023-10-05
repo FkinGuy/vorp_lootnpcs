@@ -31,7 +31,7 @@ RegisterServerEvent('npcloot:give_reward', function(data)
 
             Inventory.canCarryWeapons(_source, 1, function(cb)
                 if not cb then
-                    return VORPcore.NotifyRightTip(_source, "You can't carry any more WEAPONS", 3000)
+                    return VORPcore.NotifyRightTip(_source, invFullWeapon, 3000)
                 end
             end)
 
@@ -68,11 +68,11 @@ RegisterServerEvent('npcloot:give_reward', function(data)
             local canCarry2 = Inventory.canCarryItem(_source, Config.items[chance4].name, count) --cancarry item limit
 
             if not canCarry then
-                return VORPcore.NotifyRightTip(_source, "You can't carry any more " .. Config.items[chance4].label, 30000)
+                return VORPcore.NotifyRightTip(_source, invFullItems .. Config.items[chance4].label, 30000)
             end
 
             if not canCarry2 then
-                return VORPcore.NotifyRightTip(_source, "You can't carry any more " .. Config.items[chance4].label, 30000)
+                return VORPcore.NotifyRightTip(_source, invFullItems .. Config.items[chance4].label, 30000)
             end
 
             Inventory.addItem(_source, Config.items[chance4].name, count)
