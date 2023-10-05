@@ -5,9 +5,9 @@ Config.canReceiveItems = false -- true | false
 Config.receiveItem = 20        -- If below this number, then can receive
 Config.chanceGettingItem = 100 -- Percentage out of 100
 Config.items = {               -- You will receive a random item from the list
-    { name = "Water",              label = "Water",                amount = 1 },
-    { name = "ammorepeaternormal", label = "Normal Ammo Repeater", amount = 1 },
-    { name = "ammoriflenormal",    label = "Normal Ammo Rifle",    amount = 1 },
+    { name = "Water",              label = water,                amount = 1 },
+    { name = "ammorepeaternormal", label = ammorepeaternormal, amount = 1 },
+    { name = "ammoriflenormal",    label = ammoriflenormal,    amount = 1 },
 }
 
 -- Enable or disable the chance to receive MONEY
@@ -37,5 +37,8 @@ Config.Translate = {
     invFullWeapon = "You can't carry any more WEAPONS",
     invFullItems = "You can't carry any more ITEMS",
     youGot = "You got",
-    nugget = "nugget"
-}
+    nugget = "nugget",
+    water = "Water",
+    ammorepeaternormal = "Normal Ammo Repeater",
+    ammoriflenormal = "Normal Ammo Rifle"
+}  # isn't there a table somewhere, where I could just pull the translation of items ?
