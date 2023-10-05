@@ -9,12 +9,10 @@ local Inventory = exports.vorp_inventory:vorp_inventoryApi()
 
 
 RegisterServerEvent('npcloot:give_reward', function(data)
-    print("npcloot:give_reward was triggered server-side")
     if data ~= 98 then -- change this number acording to  your client side  cheaters can see this so do a new number and in client as well on this event they must match
 	print("returning because data ~= 98")
         return print("cheater detected Id:", _source, GetPlayerName(_source), GetPlayerIdentifiers(_source))
     end
-    print("not returning, data is ok")
     local _source = source
     local User = VORPcore.getUser(_source)
 
@@ -24,7 +22,6 @@ RegisterServerEvent('npcloot:give_reward', function(data)
 
     local Character = User.getUsedCharacter
 
-    VORPcore.NotifyRightTip(_source, "npcloot event was triggered server-side. Config.canReceiveWeapons=" .. tostring(Config.canReceiveWeapons), 3000)
     if Config.canReceiveWeapons then
         local chance = math.random(1, Config.chanceGettingWeapon)
         if chance < Config.receiveWeapon then
@@ -43,20 +40,12 @@ RegisterServerEvent('npcloot:give_reward', function(data)
         end
     end
 
-    VORPcore.NotifyRightTip(_source, "npcloot event was triggered server-side. Config.canReceiveMoney=" .. tostring(Config.canReceiveMoney), 3000)
-    print("Config.canReceiveMoney=" .. tostring(Config.canReceiveMoney))
     if Config.canReceiveMoney then
         local chance1 = math.random(1, Config.chanceGettingMoney)
-	VORPcore.NotifyRightTip(_source, "chance1=" .. tostring(chance1) .. " Config.chanceGettingMoney=" .. Config.chanceGettingMoney, 3000)
-	print("chance1=" .. tostring(chance1) .. " Config.chanceGettingMoney=" .. Config.chanceGettingMoney)
         if chance1 < Config.receiveMoney then
-	    print("chance1<Config.chanceGettingMoney")
             local item_type = math.random(1, #Config.money)
             Character.addCurrency(0, Config.money[item_type])
             VORPcore.NotifyRightTip(_source, youGot .. string.format("%.2f", Config.money[item_type]) .. "$", 10000)
-            print(youGot .. string.format("%.2f", Config.money[item_type]) .. "$")
-	else
-	    print("no luck : chance1>Config.chanceGettingMoney")
         end
     end
 
