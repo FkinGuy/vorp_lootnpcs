@@ -11,7 +11,7 @@ local Inventory = exports.vorp_inventory:vorp_inventoryApi()
 RegisterServerEvent('npcloot:give_reward', function(data)
     if data ~= 98 then -- change this number acording to  your client side  cheaters can see this so do a new number and in client as well on this event they must match
 	print("returning because data ~= 98")
-        return print("cheater detected Id:", _source, GetPlayerName(_source), GetPlayerIdentifiers(_source))
+        return print(Config.Translate.cheaterdetecte, " Id:", _source, GetPlayerName(_source), GetPlayerIdentifiers(_source))
     end
     local _source = source
     local User = VORPcore.getUser(_source)
