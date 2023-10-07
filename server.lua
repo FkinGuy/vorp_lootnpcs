@@ -31,12 +31,12 @@ RegisterServerEvent('npcloot:give_reward', function(data)
 
             Inventory.canCarryWeapons(_source, 1, function(cb)
                 if not cb then
-                    return VORPcore.NotifyRightTip(_source, invFullWeapon, 3000)
+                    return VORPcore.NotifyRightTip(_source, Config.Translate.invFullWeapon, 3000)
                 end
             end)
 
             Inventory.createWeapon(_source, Config.weapons[chance1].name, ammo, {})
-            VORPcore.NotifyRightTip(_source, youGot .. Config.weapons[chance1].label, 3000)
+            VORPcore.NotifyRightTip(_source, Config.Translate.youGot .. Config.weapons[chance1].label, 3000)
         end
     end
 
@@ -45,7 +45,7 @@ RegisterServerEvent('npcloot:give_reward', function(data)
         if chance1 < Config.receiveMoney then
             local item_type = math.random(1, #Config.money)
             Character.addCurrency(0, Config.money[item_type])
-            VORPcore.NotifyRightTip(_source, youGot .. string.format("%.2f", Config.money[item_type]) .. "$", 10000)
+            VORPcore.NotifyRightTip(_source, Config.Translate.youGot .. string.format("%.2f", Config.money[item_type]) .. "$", 10000)
         end
     end
 
@@ -55,7 +55,7 @@ RegisterServerEvent('npcloot:give_reward', function(data)
         if chance2 < Config.receiveGold then
             local item_type = math.random(1, #Config.gold)
             Character.addCurrency(1, Config.gold[item_type])
-            VORPcore.NotifyRightTip(_source, youGot .. Config.gold[item_type] .. " nugget.", 2000)
+            VORPcore.NotifyRightTip(_source, Config.Translate.youGot .. Config.gold[item_type] .. " nugget.", 2000)
         end
     end
 
@@ -68,15 +68,15 @@ RegisterServerEvent('npcloot:give_reward', function(data)
             local canCarry2 = Inventory.canCarryItem(_source, Config.items[chance4].name, count) --cancarry item limit
 
             if not canCarry then
-                return VORPcore.NotifyRightTip(_source, invFullItems .. Config.items[chance4].label, 30000)
+                return VORPcore.NotifyRightTip(_source, Config.Translate.invFullItems .. Config.items[chance4].label, 30000)
             end
 
             if not canCarry2 then
-                return VORPcore.NotifyRightTip(_source, invFullItems .. Config.items[chance4].label, 30000)
+                return VORPcore.NotifyRightTip(_source, Config.Translate.invFullItems .. Config.items[chance4].label, 30000)
             end
 
             Inventory.addItem(_source, Config.items[chance4].name, count)
-            VORPcore.NotifyRightTip(_source, youGot .. Config.items[chance4].label, 3000)
+            VORPcore.NotifyRightTip(_source, Config.Translate.youGot .. Config.items[chance4].label, 3000)
         end
     end
 end)
