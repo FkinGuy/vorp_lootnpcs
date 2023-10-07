@@ -11,5 +11,5 @@ exports {
 }
 
 client_scripts { 'client.lua', 'client.js' }
-shared_script 'config.lua'
+shared_scripts { 'languages.lua', 'config.lua' }
 server_script 'server.lua'
