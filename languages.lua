@@ -20,7 +20,7 @@ elseif Language == "Francais" then
     Config.Translate = {
         invFullWeapon = "Vous n'avez pas de place pour une autre arme",
         invFullItems = "Vous n'avez plus de place pour ",
-        youGot = "Vous obtenez ",
+        youGot = "Vous trouvez ",
         nugget = " pépites",
         water = "un litre d'eau",
         ammorepeaternormal = "des munitions pour fusil à répétition",
