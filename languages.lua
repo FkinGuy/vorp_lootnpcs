@@ -25,7 +25,7 @@ elseif Language == "Francais" then
         water = "un litre d'eau",
         ammorepeaternormal = "des munitions pour fusil à répétition",
         ammoriflenormal = "des munitions pour fusil",
-        WEAPON_REVOLVER_CATTLEMAN_label = "un révolver Cattleman",
+        WEAPON_REVOLVER_CATTLEMAN_label = "un revolver Cattleman",
         WEAPON_REPEATER_CARBINE_label = "une carabine à répétition",
         WEAPON_RIFLE_VARMINT_label = "un fusil à petit gibier"
     }  
